@@ -1,0 +1,9 @@
+{
+  "env": "line",
+  "line": {
+    "base_url": "https://us-central1-my-blogs-abda3.cloudfunctions.net"
+  },
+  "local": {
+    "base_url": "https://us-central1-my-blogs-abda3.cloudfunctions.net"
+  }
+}

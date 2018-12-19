@@ -1,0 +1,1 @@
+const FirebaseApp = require('../helpers/FirebaseApp');
