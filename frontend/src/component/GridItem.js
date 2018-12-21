@@ -44,7 +44,8 @@ class GridItem extends Component {
     }
 
     componentDidMount() {
-        this.props.setGridItems(this.animatable)
+        const {setGridItems, single} = this.props;
+        if (!single) setGridItems(this.animatable);
     }
 
     setRef = (label, value) => this.animatable[label] = value;
@@ -130,10 +131,10 @@ class GridItem extends Component {
     };
 
     render() {
-        const {index, dataItem, onClickOpenItem} = this.props;
+        const {index, dataItem, onClickOpenItem, single} = this.props;
         return (
             <MainItem ref={(el) => this.mainDom.el = el}
-                      onClick={() => onClickOpenItem(index)}
+                      onClick={() => !single ? onClickOpenItem(index) : ""}
                       onMouseEnter={this.mouseenterFn}
                       onMouseLeave={this.mouseleaveFn}
                       onMouseMove={this.mousemoveFn}>
@@ -142,4 +143,5 @@ class GridItem extends Component {
         );
     }
 }
+
 export default GridItem;

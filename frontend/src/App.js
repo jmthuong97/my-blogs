@@ -1,30 +1,22 @@
 import React, {Component} from 'react';
-import {getAllPosts} from './module/PostAPI';
-import GridLayout from './container/GridLayout';
+import {
+    BrowserRouter,
+    Switch,
+    Route
+} from 'react-router-dom'
+import Home from './container/Home';
+import Upload from './container/Upload';
 import './App.css';
-import Loading from "./component/Atom/Loading";
 
 class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            posts: [],
-            isLoading: true
-        };
-    }
-
-    componentDidMount() {
-        getAllPosts().then(posts => this.setState({posts: posts.data}));
-    }
-
     render() {
-        const {isLoading, posts} = this.state;
-        const setIsLoading = (isLoading) => this.setState({isLoading});
         return (
-            <div className="App">
-                {isLoading && <Loading/>}
-                <GridLayout isLoading={isLoading} setIsLoading={setIsLoading} posts={posts}/>
-            </div>
+            <BrowserRouter>
+                <Switch>
+                    <Route exact path="/" component={Home}/>
+                    <Route path="/upload" component={Upload}/>
+                </Switch>
+            </BrowserRouter>
         );
     }
 }

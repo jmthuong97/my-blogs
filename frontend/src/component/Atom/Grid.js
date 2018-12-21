@@ -13,7 +13,6 @@ const Grid = styled.div`
     width: 100%;
 	max-width: 1440px;
 	margin: 0 auto;
-	padding-bottom: 10rem;
 	@media screen and (min-width: 55em) {
 	    display: grid;
 		align-items: center;

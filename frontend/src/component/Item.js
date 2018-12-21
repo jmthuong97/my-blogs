@@ -24,16 +24,16 @@ export default ({setRef, dataItem}) => {
         <Box>
             <BoxShadow setRef={setRef}/>
             <BoxImg src={dataItem["picture"]["thumbnail"]} setRef={setRef}/>
-            {dataItem.title &&
+            {dataItem.title && dataItem.title["data"] &&
             <BoxTitle setRef={setRef} location={dataItem.title["location"]} straight={dataItem.title["straight"]}>
                 <BoxTitleInner>{dataItem.title["data"]}</BoxTitleInner>
             </BoxTitle>}
-            {dataItem.text &&
+            {dataItem.text && dataItem.text["data"] &&
             <BoxText setRef={setRef} location={dataItem.text["location"]}>
                 <BoxTextInner reverse={dataItem.text["reverse"]}
                               rotated={dataItem.text["rotated"]}>{dataItem.text["data"]}</BoxTextInner>
             </BoxText>}
-            {dataItem.icon &&
+            {dataItem.icon && dataItem.icon["data"] &&
             <BoxDeco setRef={setRef}
                      location={dataItem.icon["location"]}>{dataItem.icon["data"]}</BoxDeco>}
             {dataItem.description &&

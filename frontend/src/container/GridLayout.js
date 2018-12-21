@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {TweenMax} from "gsap/TweenMax";
 import imagesloaded from 'imagesloaded';
 import {getRandomInt, lineEq} from '../untils/index';
+import Header from '../component/Header';
 import Grid from '../component/Atom/Grid';
 import GridItem from '../component/GridItem';
 import OverlayItem from '../component/OverlayItem';
@@ -168,7 +169,7 @@ class GridLayout extends Component {
 
         return (
             <div>
-                <Grid/>
+                <Header/>
                 <Grid>{listGridItem}</Grid>
                 <Overlay ref={el => this.overlay = el}>
                     <OverlayReveal ref={el => this.overlay_reveal = el}/>
